@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farah Chat</title>
+<style>
+body{margin:0;font-family:Arial;background:#ece5dd}
+header{background:#075e54;color:white;padding:15px;text-align:center}
+#chat{height:70vh;overflow:auto;padding:10px}
+.msg{background:#dcf8c6;margin:5px;padding:8px;border-radius:8px;width:fit-content}
+.input{display:flex;padding:10px;background:#f0f0f0}
+input{flex:1;padding:10px;border-radius:20px;border:none}
+button{padding:10px 15px;border:none;background:#075e54;color:white;border-radius:50%}
+</style>
+</head>
+<body>
+
+<header>Farah Chat</header>
+
+<div id="chat"></div>
+
+<div class="input">
+<input id="m" placeholder="Qor fariin...">
+<button onclick="send()">➤</button>
+</div>
+
+<script>
+function send(){
+ let t=document.getElementById("m");
+ if(t.value==="")return;
+ let d=document.createElement("div");
+ d.className="msg";
+ d.innerText=t.value;
+ document.getElementById("chat").appendChild(d);
+ t.value="";
+}
+</script>
+
+</body>
+</html>
